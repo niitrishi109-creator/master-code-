@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Truth & Dare - Doston Ki Mehfil</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">💜</span>
+      <div>
+        <h1>Truth <span>&</span> Dare</h1>
+        <p>Doston Ki Mehfil • Masti Unlimited</p>
+      </div>
+    </div>
+    <div class="online-tag">
+      <span class="online-dot"></span> GAME READY
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Players ka setup -->
+    <section class="panel setup-panel" id="setupPanel">
+
+      <div class="section-heading">
+        <span class="heading-icon">🎮</span>
+        <div>
+          <h2>Chalo Game Shuru Karein!</h2>
+          <p>Sab doston ke naam jodo aur masti shuru karo.</p>
+        </div>
+      </div>
+
+      <form id="playerForm" class="player-form">
+        <input
+          type="text"
+          id="playerInput"
+          placeholder="Dost ka naam likho..."
+          maxlength="24"
+          autocomplete="off"
+        >
+        <button type="submit" class="primary-btn">+ Naam Jodo</button>
+      </form>
+
+      <div class="player-list" id="playerList"></div>
+
+      <div class="form-group">
+        <label for="gameMode">🎯 Game kiske saath kheloge?</label>
+        <select id="gameMode">
+          <option value="friends">Doston Ke Saath 😎</option>
+          <option value="couples">Couples Mode ❤️</option>
+          <option value="mixed">Friends + Couples 🔥</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="intensity">🔥 Masti Ka Level</label>
+        <select id="intensity">
+          <option value="easy">Chill Masti 😊</option>
+          <option value="medium" selected>Full Masti 😈</option>
+          <option value="hard">Tough Challenge 🔥</option>
+        </select>
+        <p class="hint">Koi challenge pasand na aaye toh use chhod sakte ho.</p>
+      </div>
+
+      <p id="setupMessage" class="message"></p>
+
+      <button type="button" id="startBtn" class="primary-btn start-btn">
+        🚀 Game Shuru Karo
+      </button>
+
+      <p class="privacy-note">
+        💜 Respect sabki, masti sabki! Kisi ko bhi zabardasti mat karo.
+      </p>
+
+    </section>
+
+    <!-- Main game -->
+    <section class="panel game-panel hidden" id="gamePanel">
+
+      <div class="game-top">
+        <div>
+          <p class="eyebrow">AB KISKI BAARI HAI?</p>
+          <h2 id="currentPlayer">Player</h2>
+          <p id="turnInfo">Player 1 ki baari</p>
+        </div>
+
+        <div class="avatar" id="currentAvatar">😎</div>
+      </div>
+
+      <button type="button" id="spinBtn" class="spin-btn">
+        🎡 Ghumao Aur Dekho!
+      </button>
+
+      <p class="choose-text">Ya phir apni marzi se chuno 👇</p>
+
+      <div class="choice-buttons">
+        <button type="button" id="truthBtn" class="truth-btn">
+          💜 SACH BATAO
+          <span>Truth</span>
+        </button>
+
+        <button type="button" id="dareBtn" class="dare-btn">
+          💗 CHALLENGE LO
+          <span>Dare</span>
+        </button>
+      </div>
+
+      <div class="challenge-box hidden" id="challengeBox">
+        <div class="challenge-heading">
+          <span id="challengeType">💜 SACH BATAO</span>
+          <span class="challenge-label">TUMHARI BAARI</span>
+        </div>
+
+        <p id="challengeText">Tumhara sawaal yahan aayega.</p>
+
+        <div class="challenge-actions">
+          <button type="button" id="skipBtn" class="secondary-btn">
+            ⏭️ Chhodo
+          </button>
+
+          <button type="button" id="completeBtn" class="primary-btn">
+            ✅ Ho Gaya!
+          </button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <span>🔄</span>
+          <p>Round</p>
+          <strong id="roundCount">1</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>🏆</span>
+          <p>Poore Challenges</p>
+          <strong id="completedCount">0</strong>
+        </div>
+      </div>
+
+      <button type="button" id="editPlayersBtn" class="text-btn">
+        ⚙️ Players Badlo
+      </button>
+
+    </section>
+
+    <footer>
+      <p>Made with 💜 aur dher saari masti!</p>
+      <p>Truth bolo, Dare lo, yaadein banao ✨</p>
+    </footer>
+
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
